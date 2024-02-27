@@ -13,7 +13,7 @@
 
 #Searchbase Übergeordnete OU wird ausgewählt
 #Rechtsklick auf OU  -> Attribute -> Distingushed Name kopieren
-$searchscope = "DC=wbv,DC=local"
+$searchscope = "DC=hogwarts,DC=local"
 
 #Pfadangabe wo die CSV abgelegt werden soll + Dateiname
 #Default#### "C:\users\$env:UserName\Documents\"
