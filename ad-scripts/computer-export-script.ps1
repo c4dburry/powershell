@@ -35,7 +35,7 @@ $coding = "UTF8"
 #Zusammenführen des Exportpath
 	$exportpath = $exportpath+$exportname
 #Export-Csv
-	Get-ADComputer -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select Name,DisplayName,DistinguishedName,PrimaryGroup | Export-Csv $exportpath -NoTypeInformation -Encoding $coding
+	Get-ADComputer -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select-Object Name,DisplayName,DistinguishedName,PrimaryGroup | Export-Csv $exportpath -NoTypeInformation -Encoding $coding
 
 
 ####################

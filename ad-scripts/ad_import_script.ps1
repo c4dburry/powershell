@@ -59,7 +59,7 @@ $pathname=$path+$filename
 $USERS = Import-Csv -Path $pathname
 
 #Loop through each row containing user details in the CSV file
-$USERS | foreach {
+$USERS | ForEach-Object {
   
   ### Organisation ###
 	$company						= $_.'company' 
