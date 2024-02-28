@@ -1,3 +1,2 @@
-#powershell
-https://img.shields.io/badge/powershell-scripts-red%20
+# powershell
 Powershell Stuff
