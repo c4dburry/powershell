@@ -36,7 +36,7 @@ Import-CSV $importdatei | Foreach-Object {
         Office              = $_.office;
         OfficePhone         = $_.officephone;
         ipphone             = $_.telephoneNumber;
-        fax                 = $_.fax;
+        facsimileTelephoneNumber                 = $_.fax;
         MobilePhone         = $_.mobile;
         StreetAddress       = $_.streetAddress;
         City                = $_.City;
@@ -62,5 +62,6 @@ Import-CSV $importdatei | Foreach-Object {
             {
             $hashtable.remove("Replace")
         }
-    Set-ADUser @hashtable
+
+    Set-ADUser @hashtable -clear $keysToRemove
 }
