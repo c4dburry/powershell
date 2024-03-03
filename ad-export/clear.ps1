@@ -1,2 +1,2 @@
 Import-Module ActiveDirectory
-Set-AdUser -Identity dueses -off  -clear facsimileTelephoneNumber
+Set-AdUser -Identity dueses -replace -clear facsimileTelephoneNumber

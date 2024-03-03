@@ -1,5 +1,5 @@
 ##import/update User-Properties
-$importdatei = "ad-export\2024-03-03T17.26.31.6091817+01.00-export.csv"
+$importdatei = "ad-export\2024-03-03T19.05.20.2788390+01.00-export.csv"
 
 Import-CSV $importdatei | Foreach-Object { 
 
@@ -34,16 +34,16 @@ Import-CSV $importdatei | Foreach-Object {
         info                = $_.info;
         Department          = $_.Department;
         Office              = $_.office;
-        OfficePhone         = $_.officephone;
+        #OfficePhone         = $_.officephone;
         ipphone             = $_.telephoneNumber;
-        facsimileTelephoneNumber                 = $_.fax;
+        fax                 = $_.fax;
         MobilePhone         = $_.mobile;
         StreetAddress       = $_.streetAddress;
         City                = $_.City;
         PostalCode          = $_.postalCode;
         State               = $_.State;
         Country             = $_.Country;
-        wWWHomePage         = $_.wWWHomePage;
+        #wWWHomePage         = $_.wWWHomePage;
 
         ErrorAction         = "Stop"
 
@@ -63,5 +63,5 @@ Import-CSV $importdatei | Foreach-Object {
             $hashtable.remove("Replace")
         }
 
-    Set-ADUser @hashtable -clear $keysToRemove
+    Set-ADUser @hashtable 
 }
