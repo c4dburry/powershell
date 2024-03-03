@@ -13,13 +13,15 @@
 
 #Searchbase Übergeordnete OU wird ausgewählt
 #Rechtsklick auf OU  -> Attribute -> Distingushed Name kopieren
-$searchscope = "DC=hogwarts,DC=local"
+$searchscope = "OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local"
 
 #Pfadangabe wo die CSV abgelegt werden soll + Dateiname
 #Default#### "C:\users\$env:UserName\Documents\"
 #DefaultName#### "export.csv"
 $exportpath = "C:\users\$env:UserName\Documents\powershell\ad-export\"
 $exportname = "export.csv"
+$timestamp = Get-Date -Format o | ForEach-Object { $_ -replace ":", "." }
+$exportname = $timestamp + "-" + $exportname
 
 #Angabe der Encoding ausgabe - 
 #Default#### UTF8

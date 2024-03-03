@@ -2,7 +2,7 @@ Import-Module ActiveDirectory
 $pfad = "OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local"
 $password = "Synergy2024!"
 
-Import-Csv "C:\Users\Administrator\Documents\powershell\new-users\ImportADUsers.csv" -Delimiter ',' |
+Import-Csv ".\new-users\ImportADUsers.csv" -Delimiter ',' |
 ForEach-Object { 
 
 New-ADUser -Name $_.name `
