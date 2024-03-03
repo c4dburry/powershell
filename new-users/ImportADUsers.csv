@@ -1,3 +1,3 @@
-﻿givenname,surname,Displayname,samaccountname,Usersprincipalname,Street,City,State/province,Zip/Postal Code,Country/region,Job Title,Department,Company,Manager,path,Description,Office,Telephone number,Other Telephone,E-mail,Mobile,Notes,Account status
-Franz,Brötchen,Franz Brötche,franz.broetchen,franz.broetchen@hogwarts.de,Theodor-lessing-ring,Hannover,Niedersachsen,38123,German,GF,Büro Garbse,IT,er selbst,"OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local",Student of Life,GBS,888888,999999,franz.broetchen@hogwarts.de,1111111,notiz,Disabled
-Siegfried,Duese,Siegfried,dueses,dueses@hogwarts.de,Theodor-lessing-ring,Hannover,Niedersachsen,38123,German,GF,Büro Garbse,IT,Franz,"OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local",Hero,GBS,888888,999999,dueses@hogwarts.local,1111111,notiz,enabled
+﻿name,givenname,surname,Displayname,samaccountname,UPN,Street,City,State,Zip,Country,Emailaddress,description
+FRANZA,Franz,Brötchen,Franzbroetchen,franz.broetchen,franz.broetchen@hogwarts.de,Theodor-lessing-ring,Hannover,Niedersachsen,38123,de,franz.broetchen@hogwarts.de,gf
+FRANZB,Siegfried,Duese,Siegfried,dueses,dueses@hogwarts.de,Theodor-lessing-ring,Hannover,Niedersachsen,38123,de,dueses@hogwarts.local,user
