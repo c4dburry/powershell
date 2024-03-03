@@ -18,7 +18,7 @@ $searchscope = "DC=hogwarts,DC=local"
 #Pfadangabe wo die CSV abgelegt werden soll + Dateiname
 #Default#### "C:\users\$env:UserName\Documents\"
 #DefaultName#### "export.csv"
-$exportpath = "C:\users\$env:UserName\Documents\"
+$exportpath = "C:\users\$env:UserName\Documents\powershell\ad-export\"
 $exportname = "export.csv"
 
 #Angabe der Encoding ausgabe - 
@@ -35,7 +35,7 @@ $coding = "UTF8"
 #Zusammenführen des Exportpath
 	$exportpath = $exportpath+$exportname
 #Export-Csv
-	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select-Object company,DisplayName,DistinguishedName,samaccountname,givenname,surname,emailaddress,UserPrincipalName,title,description,info,department,office,officephone,telephoneNumber,ipphone,fax,mobile,streetaddress,city,Postalcode,state,country,wWWHomePage | Export-Csv $exportpath -NoTypeInformation -Encoding $coding
+	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select-Object company,ObjectGUID,DisplayName,DistinguishedName,samaccountname,givenname,surname,emailaddress,UserPrincipalName,title,description,info,department,office,officephone,telephoneNumber,ipphone,fax,mobile,streetaddress,city,Postalcode,state,country,wWWHomePage | Export-Csv $exportpath -NoTypeInformation -Encoding $coding
 
 
 ####################

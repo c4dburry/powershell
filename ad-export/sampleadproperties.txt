@@ -1,0 +1,113 @@
+AccountExpirationDate                :
+accountExpires                       : 9223372036854775807
+AccountLockoutTime                   :
+AccountNotDelegated                  : False
+adminCount                           : 1
+AllowReversiblePasswordEncryption    : False
+AuthenticationPolicy                 : {}
+AuthenticationPolicySilo             : {}
+BadLogonCount                        : 0
+badPasswordTime                      : 0
+badPwdCount                          : 0
+CannotChangePassword                 : False
+CanonicalName                        : hogwarts.local/Users/Administrator
+Certificates                         : {}
+City                                 :
+CN                                   : Administrator
+codePage                             : 0
+Company                              :
+CompoundIdentitySupported            : {}
+Country                              :
+countryCode                          : 0
+Created                              : 29.02.2024 16:01:11
+createTimeStamp                      : 29.02.2024 16:01:11
+Deleted                              :
+Department                           :
+Description                          : Vordefiniertes Konto für die Verwaltung des Computers bzw. der Domäne
+DisplayName                          :
+DistinguishedName                    : CN=Administrator,CN=Users,DC=hogwarts,DC=local
+Division                             :
+DoesNotRequirePreAuth                : False
+dSCorePropagationData                : {29.02.2024 16:16:58, 29.02.2024 16:16:58, 29.02.2024 16:01:48, 01.01.1601 19:12:16}
+EmailAddress                         :
+EmployeeID                           :
+EmployeeNumber                       :
+Enabled                              : True
+Fax                                  :
+GivenName                            :
+HomeDirectory                        :
+HomedirRequired                      : False
+HomeDrive                            :
+HomePage                             :
+HomePhone                            :
+Initials                             :
+instanceType                         : 4
+isCriticalSystemObject               : True
+isDeleted                            :
+KerberosEncryptionType               : {}
+LastBadPasswordAttempt               :
+LastKnownParent                      :
+lastLogoff                           : 0
+lastLogon                            : 133539479000147046
+LastLogonDate                        : 03.03.2024 12:03:59
+lastLogonTimestamp                   : 133539374398540670
+LockedOut                            : False
+logonCount                           : 10
+LogonWorkstations                    :
+Manager                              :
+MemberOf                             : {CN=Richtlinien-Ersteller-Besitzer,CN=Users,DC=hogwarts,DC=local, CN=Domänen-Admins,CN=Users,DC=hogwarts,DC=local,
+                                       CN=Organisations-Admins,CN=Users,DC=hogwarts,DC=local, CN=Schema-Admins,CN=Users,DC=hogwarts,DC=local...}
+MNSLogonAccount                      : False
+MobilePhone                          :
+Modified                             : 03.03.2024 12:03:59
+modifyTimeStamp                      : 03.03.2024 12:03:59
+msDS-User-Account-Control-Computed   : 0
+Name                                 : Administrator
+nTSecurityDescriptor                 : System.DirectoryServices.ActiveDirectorySecurity
+ObjectCategory                       : CN=Person,CN=Schema,CN=Configuration,DC=hogwarts,DC=local
+ObjectClass                          : user
+ObjectGUID                           : 5e5bbffc-6841-40f4-b48d-e2afdbe0a28f
+objectSid                            : S-1-5-21-3323026626-3291368240-3490290705-500
+Office                               :
+OfficePhone                          :
+Organization                         :
+OtherName                            :
+PasswordExpired                      : False
+PasswordLastSet                      : 29.02.2024 15:15:47
+PasswordNeverExpires                 : True
+PasswordNotRequired                  : False
+POBox                                :
+PostalCode                           :
+PrimaryGroup                         : CN=Domänen-Benutzer,CN=Users,DC=hogwarts,DC=local
+primaryGroupID                       : 513
+PrincipalsAllowedToDelegateToAccount : {}
+ProfilePath                          :
+ProtectedFromAccidentalDeletion      : False
+pwdLastSet                           : 133536897479510396
+SamAccountName                       : Administrator
+sAMAccountType                       : 805306368
+ScriptPath                           :
+sDRightsEffective                    : 15
+ServicePrincipalNames                : {}
+SID                                  : S-1-5-21-3323026626-3291368240-3490290705-500
+SIDHistory                           : {}
+SmartcardLogonRequired               : False
+State                                :
+StreetAddress                        :
+Surname                              :
+Title                                : 
+TrustedForDelegation                 : False
+TrustedToAuthForDelegation           : False
+UseDESKeyOnly                        : False
+userAccountControl                   : 66048
+userCertificate                      : {}
+UserPrincipalName                    :
+uSNChanged                           : 13064
+uSNCreated                           : 8196
+whenChanged                          : 03.03.2024 12:03:59
+whenCreated                          : 29.02.2024 16:01:11
+PropertyNames                        : {AccountExpirationDate, accountExpires, AccountLockoutTime, AccountNotDelegated...}
+AddedProperties                      : {}
+RemovedProperties                    : {}
+ModifiedProperties                   : {}
+PropertyCount                        : 107

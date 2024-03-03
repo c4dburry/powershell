@@ -1,0 +1,2 @@
+﻿"company","DisplayName","DistinguishedName","samaccountname","givenname","surname","emailaddress","UserPrincipalName","title","description","info","department","office","officephone","telephoneNumber","ipphone","fax","mobile","streetaddress","city","Postalcode","state","country","wWWHomePage"
+,,"CN=Administrator,CN=Users,DC=hogwarts,DC=local","Administrator",,,,,,"Vordefiniertes Konto für die Verwaltung des Computers bzw. der Domäne",,,,,,,,,,,,,,
