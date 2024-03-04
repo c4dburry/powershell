@@ -1,7 +1,6 @@
 ##AD EXPORT SCRIPT##
 ##ad_export_script.ps1
 
-
 ##created by Mathis Keyser
 ##created on 08.02.2024
 ##Version 1.0
@@ -37,8 +36,35 @@ $coding = "UTF8"
 #Zusammenführen des Exportpath
 	$exportpath = $exportpath+$exportname
 #Export-Csv
-	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select-Object company,ObjectGUID,objectSid,DisplayName,DistinguishedName,samaccountname,givenname,surname,emailaddress,UserPrincipalName,title,description,info,department,office,officephone,telephoneNumber,ipphone,fax,mobile,streetaddress,city,Postalcode,state,country,wWWHomePage | Export-Csv $exportpath -NoTypeInformation -Encoding $coding
-
+	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | `
+	Select-Object 		`
+	company,			`
+	ObjectGUID,			`
+	objectSid,			`
+	DisplayName,		`
+	DistinguishedName,	`
+	samaccountname,		`
+	givenname,			`
+	surname,			`
+	emailaddress,		`
+	UserPrincipalName,	`
+	title,				`
+	description,		`
+	info,				`
+	department,			`
+	office,				`
+	officephone,		`
+	telephoneNumber,	`
+	ipphone,			`
+	fax,				`
+	mobile,				`
+	streetaddress,		`
+	city,				`
+	Postalcode,			`
+	state,				`
+	country,			`
+	wWWHomePage 		`
+	| Export-Csv $exportpath -NoTypeInformation -Encoding $coding
 
 ####################
 ####SCRIPT ENDE#####

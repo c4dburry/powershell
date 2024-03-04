@@ -23,8 +23,8 @@ Import-CSV $importdatei | Foreach-Object {
     #We are doing stuff in here
     $hashtable = @{
         Identity            = Get-ADuser -Filter "ObjectGUID -eq '$($_.ObjectGUID)'" -Properties *
-        Company             = $_.Company
-        DisplayName         = $_.DisplayName
+        Company             = $_.Company;
+        DisplayName         = $_.DisplayName;
         GivenName           = $_.GivenName;
         Surname             = $_.Surname;
         EmailAddress        = $_.EmailAddress;
