@@ -3,6 +3,7 @@ $importdatei = "ad-export\2024-03-04T19.03.49.8121160+01.00-export.csv"
 
 Import-CSV $importdatei | Foreach-Object { 
 
+    $removekeys = @{}
     $ldaphash = @{
         "employeeType"                  = $_.employeeType;
         "departmentnumber"              = $_.departmentNumber;
@@ -10,15 +11,26 @@ Import-CSV $importdatei | Foreach-Object {
         "msDS-cloudExtensionAttribute2" = $_."msDS-cloudExtensionAttribute2";
         "msDS-cloudExtensionAttribute3" = $_."msDS-cloudExtensionAttribute3";
         "msDS-cloudExtensionAttribute4" = $_."msDS-cloudExtensionAttribute4"
+        "ipphone"                       = $_."telephoneNumber";
+        "wWWHomePage"                   = $_."wWWHomePage"
     }
     #Get all keys that have null values and store in variable keystoremove 
     $keysToRemoveldap = $ldaphash.keys | Where-Object { 
         !$ldaphash[$_] 
     }
     #Foreach key, remove them from the hashtable 
-    $keysToRemoveldap | Foreach-Object { 
-        $ldaphash[$keysToRemoveldap] = " " 
-    }
+    #$keysToRemoveldap | Foreach-Object { 
+    #    $ldaphash[$keysToRemoveldap] = " " 
+    #}
+     #Foreach key, remove them from the hashtable 
+     $keysToRemoveldap | Foreach-Object { 
+        $removekeys.Add($_);
+       }
+    
+     $keysToRemoveldap | Foreach-Object { 
+        $ldaphash.remove($_);
+       }
+    
     
 
     #We are doing stuff in here
@@ -35,8 +47,6 @@ Import-CSV $importdatei | Foreach-Object {
         info                = $_.info;
         Department          = $_.Department;
         Office              = $_.office;
-        #OfficePhone         = $_.officephone;
-        #ipphone             = $_.telephoneNumber;
         fax                 = $_.fax;
         MobilePhone         = $_.mobile;
         StreetAddress       = $_.streetAddress;
@@ -44,11 +54,10 @@ Import-CSV $importdatei | Foreach-Object {
         PostalCode          = $_.postalCode;
         State               = $_.State;
         Country             = $_.Country;
-        #wWWHomePage         = $_.wWWHomePage;
-
         ErrorAction         = "Stop"
 
         Replace             = $ldaphash
+        Remove              = $removekeys
     } 
      
     $keysToRemove = $hashtable.keys | Where-Object { 
@@ -63,6 +72,11 @@ Import-CSV $importdatei | Foreach-Object {
             {
             $hashtable.remove("Replace")
         }
+        
+    if ($removekeys.Count -eq 0)
+        {
+            $hashtable.remove("Remove")
+        }
 
-    Set-ADUser @hashtable
+    Set-ADUser @hashtable 
 }
