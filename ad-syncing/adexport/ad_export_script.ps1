@@ -28,10 +28,10 @@ $coding = "UTF8"
 
 $explicitsearch = ""
 
-if $expsearch -eq $null {
+if ($expsearch -eq $null) {
 	$explicitsearch =""
 	else {
-		-SearchBase $searchscope
+		$explicitsearch ="-SearchBase $searchscope"
 	}
 }
 
