@@ -26,6 +26,16 @@ $exportname = $timestamp + "-" + $exportname
 #Default#### UTF8
 $coding = "UTF8"
 
+$explicitsearch = ""
+
+if $expsearch -eq $null {
+	$explicitsearch =""
+	else {
+		-SearchBase $searchscope
+	}
+}
+
+
 
 ####################
 ####SCRIPT START####
@@ -36,7 +46,7 @@ $coding = "UTF8"
 #Zusammenführen des Exportpath
 	$exportpath = $exportpath+$exportname
 #Export-Csv
-	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | `
+	Get-ADUser -Filter 'enabled -eq $true' $explicitsearch -Properties * | `
 	Select-Object 		`
 	company,			`
 	ObjectGUID,			`
@@ -68,4 +78,5 @@ $coding = "UTF8"
 
 ####################
 ####SCRIPT ENDE#####
+####################
 ####################
