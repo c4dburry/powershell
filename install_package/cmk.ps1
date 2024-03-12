@@ -1,7 +1,7 @@
-### Skript zur Installation des CheckMK Agents und
-### Registrierung des Agenten
+### Skript zur Installation des CheckMK Agents und Registrierung des Agenten
 ### 12.03.2024 - Hannover
 ### Mathis Keyser - Mathis.Keyser@it-syn.de
+### Version 1.0
 
 
 ### CheckMK Agent installieren

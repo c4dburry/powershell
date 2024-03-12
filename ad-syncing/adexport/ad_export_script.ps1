@@ -1,53 +1,31 @@
-##AD EXPORT SCRIPT##
-##ad_export_script.ps1
-
-##created by Mathis Keyser
-##created on 08.02.2024
+### Skript zum Export der Active Directory Users + Attributes
+### 12.03.2024 - Hannover
+### Mathis Keyser - Mathis.Keyser@it-syn.de
 ##Version 1.0
 
-##Script exports users attributes into .csv 
+#Import active directory module for running AD cmdlets
+Import-Module ActiveDirectory
+#Domain Default OU wird gewählt
+$searchscope=(Get-ADDomain | Select-Object  DistinguishedName).DistinguishedName
+#Skript-Pfad wird gesetzt in Path Variable
+$path=$PSScriptRoot
 
-
-########USER DEFINED VALUES########
-
-#Searchbase Übergeordnete OU wird ausgewählt
-#Rechtsklick auf OU  -> Attribute -> Distingushed Name kopieren
-$searchscope = "OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local"
+#Manuelle Anpassung Searchscope
+#Rechsklick auf OU -> Attributes -> Distinguished Name
+#$searchscope = "OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local"
 
 #Pfadangabe wo die CSV abgelegt werden soll + Dateiname
-#Default#### "C:\users\$env:UserName\Documents\"
-#DefaultName#### "export.csv"
-$exportpath = "C:\users\$env:UserName\Documents\powershell\ad-export\"
 $exportname = "export.csv"
 $timestamp = Get-Date -Format o | ForEach-Object { $_ -replace ":", "." }
 $exportname = $timestamp + "-" + $exportname
 
-#Angabe der Encoding ausgabe - 
-#Default#### UTF8
-$coding = "UTF8"
+### Starting Export
+Write-Host -ForegroundColor Green "Starting Export"
 
-
-$explicitsearch = ""
-if ($null -eq $expsearch) {
-	$explicitsearch =""
-	else {
-		$explicitsearch ="-SearchBase $searchscope"
-	}
-}
-
-
-
-####################
-####SCRIPT START####
-####################
-
-#Import active directory module for running AD cmdlets
-	Import-Module ActiveDirectory
 #Zusammenführen des Exportpath
-	$exportpath = $exportpath+$exportname
+	$exportpath = $path+$exportname
 #Export-Csv
-	Get-ADUser -Filter 'enabled -eq $true' $explicitsearch -Properties * | `
-	Select-Object 		`
+	Get-ADUser -Filter 'enabled -eq $true' -SearchBase $searchscope -Properties * | Select-Object 		`
 	company,			`
 	ObjectGUID,			`
 	objectSid,			`
@@ -74,9 +52,7 @@ if ($null -eq $expsearch) {
 	state,				`
 	country,			`
 	wWWHomePage 		`
-	| Export-Csv $exportpath -NoTypeInformation -Encoding $coding
+	| Export-Csv $exportpath -NoTypeInformation -Encoding UTF8
 
-####################
-####SCRIPT ENDE#####
-####################
-####################
+### Export Ende
+Write-Host -ForegroundColor Green "Export Erstellt"
