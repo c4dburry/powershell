@@ -17,7 +17,7 @@ $path=$path+"\"
 
 #Pfadangabe wo die CSV abgelegt werden soll + Dateiname
 $exportname = "export.csv"
-$timestamp = Get-Date -Format o | ForEach-Object { $_ -replace ":", "." }
+$timestamp = Get-Date -Format "yyyyMMdd_HH-mm" | ForEach-Object { $_ -replace ":", "." }
 $exportname = $timestamp + "-" + $exportname
 
 ### Starting Export
