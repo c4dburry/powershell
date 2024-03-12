@@ -9,6 +9,7 @@ Import-Module ActiveDirectory
 $searchscope=(Get-ADDomain | Select-Object  DistinguishedName).DistinguishedName
 #Skript-Pfad wird gesetzt in Path Variable
 $path=$PSScriptRoot
+$path=$path+"\"
 
 #Manuelle Anpassung Searchscope
 #Rechsklick auf OU -> Attributes -> Distinguished Name
