@@ -26,9 +26,9 @@ $exportname = $timestamp + "-" + $exportname
 #Default#### UTF8
 $coding = "UTF8"
 
-$explicitsearch = ""
 
-if ($expsearch -eq $null) {
+$explicitsearch = ""
+if ($null -eq $expsearch) {
 	$explicitsearch =""
 	else {
 		$explicitsearch ="-SearchBase $searchscope"

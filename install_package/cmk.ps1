@@ -8,24 +8,22 @@
 Write-Host -ForegroundColor Green "Installation CheckMK Agent"
 
 ## Location zum aktuellen Verzeichnis setzen
-$defaultlocal = (Get-Location.path)
-Write-Host $defaultlocal
-$setlocal =
-
-## Dateiname
-$file = "check-mk-agent.msi"
+$defaultlocale = "C:\"
+$scriptlocal = $PSScriptRoot
+Set-Location $scriptlocal
+$registerbat = $scriptlocal + "\register.bat"
 
 ## Installation Start
 Start-Process msiexec.exe -Wait -ArgumentList '/I check-mk-agent.msi /quiet /qn /norestart WIXUI_CLEANINSTALL='
 
-# Ende
+# Installation Abgeschlossen
 Write-Host -ForegroundColor Green "Installation abgeschlossen"
 
 ### CheckMK Agent registrieren
 Write-Host -ForegroundColor Green "Register CheckMK Agent"
-Write-Host $setlocal
-#Start-Process cmd.exe /c $setlocal\register.bat -Wait
+#"C:\install_package\register.bat"
+#Start-Process cmd.exe /c $registerbat -Wait
+Start-Process -Filepath $registerbat -Wait
 
 #Location reset
-Set-Location "C:\"
-Get-Location | Write-Host -ForegroundColor Red
+Set-Location $defaultlocale
