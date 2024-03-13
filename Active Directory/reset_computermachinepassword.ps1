@@ -1,0 +1,1 @@
+Reset-ComputerMachinePassword -Server dc.domain.local -Credential domain\administrator
