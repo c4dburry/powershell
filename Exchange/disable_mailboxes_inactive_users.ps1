@@ -4,9 +4,11 @@
 ### Version 1.0
 
 #Listet die deaktivieren User-Aliase in die Variable 
-$Mailboxes = Get-Mailbox -ResultSize Unlimited | ? { $_.ExchangeUserAccountControl -like "AccountDisabled" -and $_.RecipientTypeDetails -eq 'UserMailbox' } | Select-Object alias
+$Mailboxes = Get-Mailbox -ResultSize Unlimited | Where-Object { $_.ExchangeUserAccountControl -like "AccountDisabled" -and $_.RecipientTypeDetails -eq 'UserMailbox' } | Select-Object alias
 #Export der Variablen
-#$Mailboxes | Export-Csv $PSScriptRoot\export.csv -NoTypeInformation -Encoding UTF8
+$Mailboxes | Export-Csv $PSScriptRoot\export.csv -NoTypeInformation -Encoding UTF8
+
+# Jede Anfrage muss einzeln bestätigt werden
 foreach ($mailbox in $Mailboxes) {
     Disable-Mailbox -DomainController DC.domain.local -identity $mailbox.alias 
 } 
