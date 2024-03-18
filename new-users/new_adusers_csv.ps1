@@ -1,6 +1,6 @@
 Import-Module ActiveDirectory
-$pfad = "OU=Benutzer,OU=Hogwarts,DC=hogwarts,DC=local"
-$password = "Synergy2024!"
+$pfad = "OU-Path/distinguishedName"
+$password = "Testing2024!"
 
 Import-Csv ".\new-users\ImportADUsers.csv" -Delimiter ',' |
 ForEach-Object { 
