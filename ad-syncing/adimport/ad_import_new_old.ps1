@@ -6,6 +6,14 @@ $importdatei = "ad-export\import_ZIP.csv"
 
 Import-CSV $importdatei | Foreach-Object { 
 
+    $ldaphash = @{
+        "employeeType"                  = $_.employeeType;
+        "departmentnumber"              = $_.departmentNumber;
+        "msDS-cloudExtensionAttribute1" = $_."msDS-cloudExtensionAttribute1";
+        "msDS-cloudExtensionAttribute2" = $_."msDS-cloudExtensionAttribute2";
+        "msDS-cloudExtensionAttribute3" = $_."msDS-cloudExtensionAttribute3";
+        "msDS-cloudExtensionAttribute4" = $_."msDS-cloudExtensionAttribute4"
+    }
     #Get all keys that have null values and store in variable keystoremove 
     $keysToRemoveldap = $ldaphash.keys | Where-Object { 
         !$ldaphash[$_] 
@@ -14,7 +22,7 @@ Import-CSV $importdatei | Foreach-Object {
     $keysToRemoveldap | Foreach-Object { 
         $ldaphash.remove($_) 
     }
-    
+
     #We are doing stuff in here
     $hashtable = @{
         Identity            = Get-ADuser -Filter "ObjectGUID -eq '$($_.ObjectGUID)'" -Properties *

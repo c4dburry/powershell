@@ -44,7 +44,7 @@ Write-Host -ForegroundColor Green "Starting Export"
 	office,				`
 	officephone,		`
 	telephoneNumber,	`
-	ipphone,			`
+	#ipphone,			`
 	fax,				`
 	mobile,				`
 	streetaddress,		`
