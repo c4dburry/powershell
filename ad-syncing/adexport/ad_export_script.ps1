@@ -43,7 +43,7 @@ Write-Host -ForegroundColor Green "Starting Export"
 	department,			`
 	office,				`
 	officephone,		`
-	telephoneNumber,	`
+	#telephoneNumber,	`
 	#ipphone,			`
 	fax,				`
 	mobile,				`
