@@ -32,10 +32,10 @@ Import-CSV $import | Foreach-Object {
         Title               = $_.title;
         description         = $_.description;
         Department          = $_.Department;
-        Office              = $_.office;
+        #Office              = $_.office;
         OfficePhone         = $_.officephone;
-        fax                 = $_.fax;
-        MobilePhone         = $_.mobile;
+        #fax                 = $_.fax;
+        Mobile         = $_.mobile;
         StreetAddress       = $_.streetAddress;
         City                = $_.City;
         PostalCode          = $_.postalCode;

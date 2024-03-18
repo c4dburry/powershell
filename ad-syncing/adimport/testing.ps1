@@ -11,4 +11,7 @@
 
 #Get-Aduser -Identity "dueses" -Properties * | Select wWWHomePage
 #Set-ADUser -Identity "dueses" -replace @{info="handwerker"}
-Set-ADUser -Identity "dueses" -clear HomePage
+#Set-ADUser -Identity "dueses" -clear officephone
+
+
+Set-ADUser -Identity "dueses" -remove @{telephoneNumber="ZIPOFFICEPHONE"}
