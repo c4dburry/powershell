@@ -3,3 +3,5 @@ $timestamp = Get-Date -Format "yyyyMMdd_HH-mm"
 
 Write-Host $timestamp
 
+
+#Getting Dates for Export AD
