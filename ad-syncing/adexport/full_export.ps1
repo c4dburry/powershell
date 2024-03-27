@@ -44,8 +44,8 @@ Write-Host -ForegroundColor Green "Starting Export"
 	department,			`
 	office,				`
 	officephone,		`
-	telephoneNumber,	`
-	ipphone,			`
+	#telephoneNumber,	`
+	#ipphone,			`
 	fax,				`
 	mobile,				`
 	streetaddress,		`
